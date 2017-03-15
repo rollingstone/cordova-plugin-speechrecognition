@@ -41,6 +41,7 @@ let options = {
   String prompt,      // Android only
   Boolean showPopup,  // Android only
   Boolean showPartial // iOS only
+  Boolean continuousMode // Android only
 }
 
 window.plugins.speechRecognition.startListening(
