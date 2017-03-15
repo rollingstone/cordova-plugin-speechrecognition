@@ -62,7 +62,7 @@ public class SpeechRecognition extends CordovaPlugin {
   private View view;
   private SpeechRecognizer recognizer;
 
-  private boolean isContinuosMode;
+  private boolean isContinuousMode;
 
   @Override
   public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -121,7 +121,7 @@ public class SpeechRecognition extends CordovaPlugin {
 
         Boolean showPopup = args.optBoolean(4, true);
 
-        isContinuosMode = args.optBoolean(5, false);
+        isContinuousMode = args.optBoolean(5, false);
 
         startListening(lang, matches, prompt, showPopup);
 
@@ -162,7 +162,7 @@ public class SpeechRecognition extends CordovaPlugin {
 
   private void startListening(String language, int matches, String prompt, Boolean showPopup) {
     Log.d(LOG_TAG, "startListening() language: " + language + ", matches: " + matches + ", prompt: " + prompt
-        + ", showPopup: " + showPopup);
+        + ", showPopup: " + showPopup) + ", isContinuousMode: " + isContinuousMode);
 
     final Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
     intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -273,7 +273,7 @@ public class SpeechRecognition extends CordovaPlugin {
 
     @Override
     public void onEndOfSpeech() {
-      if (isContinuosMode) {
+      if (isContinuousMode) {
         try {
           JSONObject response = new JSONObject();
           response.put("event", "speech.onend");
@@ -311,7 +311,7 @@ public class SpeechRecognition extends CordovaPlugin {
       Log.d(LOG_TAG, "SpeechRecognitionListener results: " + matches);
 
       try {
-        if (isContinuosMode) {
+        if (isContinuousMode) {
           JSONObject response = new JSONObject();
           response.put("event", "speech.onresults");
           response.put("matches", new JSONArray(matches));

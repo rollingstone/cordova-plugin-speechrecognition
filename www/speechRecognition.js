@@ -7,7 +7,7 @@ module.exports = {
   startListening: function (successCallback, errorCallback, options) {
     options = options || {};
 
-    if (options.continuosMode != undefined && options.continuosMode == true) {
+    if (options.continuousMode != undefined && options.continuousMode == true) {
       cordova.exec(function (data) {
         var response = JSON.parse(data);
         // Note that you need to add some way of conditional to know wheter the continuous mode is used or the simple mode
@@ -22,9 +22,9 @@ module.exports = {
           console.log("Hey something was recognized, check out : ", response.matches);
         }
 
-      }, errorCallback, 'SpeechRecognition', 'startListening', [options.language, options.matches, options.prompt, options.showPartial, options.showPopup]);
+      }, errorCallback, 'SpeechRecognition', 'startListening', [options.language, options.matches, options.prompt, options.showPartial, options.showPopup, options.continuousMode]);
     } else {
-      cordova.exec(successCallback, errorCallback, 'SpeechRecognition', 'startListening', [options.language, options.matches, options.prompt, options.showPartial, options.showPopup, options.continuosMode]);
+      cordova.exec(successCallback, errorCallback, 'SpeechRecognition', 'startListening', [options.language, options.matches, options.prompt, options.showPartial, options.showPopup, options.continuousMode]);
     }
   },
   stopListening: function (successCallback, errorCallback) {
