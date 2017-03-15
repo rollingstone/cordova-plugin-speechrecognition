@@ -8,6 +8,7 @@ import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.CordovaWebView;
 import org.apache.cordova.PluginResult;
 
+import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -162,7 +163,7 @@ public class SpeechRecognition extends CordovaPlugin {
 
   private void startListening(String language, int matches, String prompt, Boolean showPopup) {
     Log.d(LOG_TAG, "startListening() language: " + language + ", matches: " + matches + ", prompt: " + prompt
-        + ", showPopup: " + showPopup) + ", isContinuousMode: " + isContinuousMode);
+        + ", showPopup: " + showPopup + ", isContinuousMode: " + isContinuousMode);
 
     final Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
     intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
