@@ -54,6 +54,7 @@ This method has an options parameter with the following optional values:
 - `prompt` {String} displayed prompt of listener popup window (default `""`, Android only)
 - `showPopup` {Boolean} display listener popup window with prompt (default `true`, Android only)
 - `showPartial` {Boolean} Allow partial results to be returned (default `false`, iOS only)
+- `continuousMode` {Boolean} Allow continuous STT (default `false`, Android only)
 
 Result of success callback is an `Array` of recognized terms.
 
