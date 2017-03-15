@@ -8,8 +8,8 @@
   <description>Cordova Plugin for Speech Recognition</description>
   <license>MIT</license>
   <keywords>cordova,speech,recognition</keywords>
-  <repo>https://github.com/pbakondy/cordova-plugin-speechrecognition</repo>
-  <issue>https://github.com/pbakondy/cordova-plugin-speechrecognition/issues</issue>
+  <repo>https://github.com/rollingstone/cordova-plugin-speechrecognition</repo>
+  <issue>https://github.com/rollingstone/cordova-plugin-speechrecognition/issues</issue>
 
   <engines>
     <engine name="cordova" version=">=3.0.0"/>
@@ -24,7 +24,7 @@
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="SpeechRecognition">
-        <param name="android-package" value="com.pbakondy.SpeechRecognition"/>
+        <param name="android-package" value="com.rollingstone.SpeechRecognition"/>
       </feature>
     </config-file>
 
@@ -32,8 +32,8 @@
       <uses-permission android:name="android.permission.RECORD_AUDIO" />
     </config-file>
 
-    <source-file src="src/android/com/pbakondy/SpeechRecognition.java" target-dir="src/com/pbakondy" />
-    <source-file src="src/android/com/pbakondy/LanguageDetailsChecker.java" target-dir="src/com/pbakondy" />
+    <source-file src="src/android/com/rollingstone/SpeechRecognition.java" target-dir="src/android" />
+    <source-file src="src/android/com/rollingstone/LanguageDetailsChecker.java" target-dir="src/android" />
   </platform>
 
   <!-- ios -->
