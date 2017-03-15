@@ -32,8 +32,8 @@
       <uses-permission android:name="android.permission.RECORD_AUDIO" />
     </config-file>
 
-    <source-file src="src/android/com/rollingstone/SpeechRecognition.java" target-dir="src/android" />
-    <source-file src="src/android/com/rollingstone/LanguageDetailsChecker.java" target-dir="src/android" />
+    <source-file src="src/android/SpeechRecognition.java" target-dir="src/android" />
+    <source-file src="src/android/LanguageDetailsChecker.java" target-dir="src/android" />
   </platform>
 
   <!-- ios -->
